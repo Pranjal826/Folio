@@ -12,12 +12,12 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
-
+axios.defaults.withCredentials=true
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:5100/api/submit-form', {
+      const response = await axios.post('https://my-folio-lilac.vercel.app/api/submit-form', {
         ...formData,
       }, {
         headers: {
