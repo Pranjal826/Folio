@@ -17,7 +17,7 @@ axios.defaults.withCredentials=true
     e.preventDefault();
   
     try {
-      const response = await axios.post('https://my-folio-lilac.vercel.app/api/submit-form', {
+      const response = await axios.post('https://my-folio-6b3rm2z6k-pranjal-shuklas-projects.vercel.app/api/submit-form', {
         ...formData,
       }, {
         headers: {
