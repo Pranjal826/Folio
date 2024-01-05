@@ -19,9 +19,18 @@ mongoose.connect('mongodb+srv://pranjalshukla245:RgiDeemJ5JkE7DGt@cluster0.vtjn0
 });
 
 const formDataSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  message: String,
+  name: {
+    type:String,
+    required:true
+  },
+  email: {
+    type:String,
+    required:true
+  },
+  message:{
+    type:String,
+    required:true
+  }
 });
 
 const FormData = mongoose.model('Portfolio', formDataSchema);
