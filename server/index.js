@@ -7,12 +7,6 @@ const emitter = new EventEmitter();
 const port = 5100;
 emitter.setMaxListeners(15);
 const app = express();
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://myfolio-frontend-chk58pxv8-pranjal-shuklas-projects.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://pranjalshukla245:RgiDeemJ5JkE7DGt@cluster0.vtjn0jv.mongodb.net/Myfolio?retryWrites=true&w=majority', {
@@ -34,6 +28,15 @@ const formDataSchema = new mongoose.Schema({
 const FormData = mongoose.model('Portfolio', formDataSchema);
 
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://myfolio-frontend.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
+  
+  next();
+});
+
 app.use(cors());
 app.get('/',(req,res)=>{
     res.send("Api running")
