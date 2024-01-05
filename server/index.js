@@ -30,11 +30,17 @@ app.use(bodyParser.json());
 
 // Configure CORS middleware
 app.use(cors({
-  origin: '*',
+  origin: 'https://folio-five-umber.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
 }));
+
+// Add 'Access-Control-Allow-Credentials' header to the response
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 app.get('/',(req,res)=>{
     res.send("Api running")
