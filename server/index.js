@@ -4,17 +4,16 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const EventEmitter = require('events');
 const emitter = new EventEmitter();
-
-// Set the maximum number of listeners for 'close' event to 15
+const port = 5100;
 emitter.setMaxListeners(15);
 const app = express();
-app.use(cors({
-    origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
-    methods: ["POST", "GET"],
-    credentials: true,
-}));
+const corsOptions = {
+  origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
+  methods: ["POST", "GET"],
+  credentials: true,
+};
 
-const port = 5100;
+
 
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://pranjalshukla245:RgiDeemJ5JkE7DGt@cluster0.vtjn0jv.mongodb.net/Myfolio?retryWrites=true&w=majority', {
@@ -36,7 +35,7 @@ const formDataSchema = new mongoose.Schema({
 const FormData = mongoose.model('Portfolio', formDataSchema);
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.get('/',(req,res)=>{
     res.send("Api running")
 })
