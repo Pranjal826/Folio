@@ -9,7 +9,7 @@ const emitter = new EventEmitter();
 emitter.setMaxListeners(15);
 const app = express();
 app.use(cors({
-    origin: '*',
+    origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
     methods: ["POST", "GET"],
     credentials: true,
 }));
