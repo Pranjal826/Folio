@@ -18,7 +18,6 @@ mongoose.connect('mongodb+srv://pranjalshukla245:RgiDeemJ5JkE7DGt@cluster0.vtjn0
     console.log("error connecting to mongodb",err);
 });
 
-
 const formDataSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -28,19 +27,19 @@ const formDataSchema = new mongoose.Schema({
 const FormData = mongoose.model('Portfolio', formDataSchema);
 
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://myfolio-frontend.vercel.app');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', true);
-  
-  next();
-});
 
-app.use(cors());
+// Configure CORS middleware
+app.use(cors({
+  origin: 'https://myfolio-frontend.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+}));
+
 app.get('/',(req,res)=>{
     res.send("Api running")
 })
+
 app.post('/api/submit-form', async (req, res) => {
   const formData = req.body;
   console.log(formData);
