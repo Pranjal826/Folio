@@ -8,6 +8,12 @@ const emitter = new EventEmitter();
 // Set the maximum number of listeners for 'close' event to 15
 emitter.setMaxListeners(15);
 const app = express();
+app.use(cors({
+  origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
+  methods: ["POST", "GET"],
+  credentials: true,
+}));
+
 const port = 5100;
 
 // Connect to MongoDB
@@ -30,7 +36,6 @@ const formDataSchema = new mongoose.Schema({
 const FormData = mongoose.model('Portfolio', formDataSchema);
 
 app.use(bodyParser.json());
-app.use(cors());
 app.get('/',(req,res)=>{
     res.send("Api running")
 })
