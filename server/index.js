@@ -8,7 +8,7 @@ const port = 5100;
 emitter.setMaxListeners(15);
 const app = express();
 const corsOptions = {
-  origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
+  origin: 'https://myfolio-frontend-chk58pxv8-pranjal-shuklas-projects.vercel.app',
   methods: ["POST", "GET"],
   credentials: true,
 };
