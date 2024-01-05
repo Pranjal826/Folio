@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 // Configure CORS middleware
 app.use(cors({
-  origin: 'https://folio-five-umber.vercel.app',
+  origin: 'https://pranjal-folio.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
