@@ -9,9 +9,9 @@ const emitter = new EventEmitter();
 emitter.setMaxListeners(15);
 const app = express();
 app.use(cors({
-  origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
-  methods: ["POST", "GET"],
-  credentials: true,
+    origin: 'https://pranjal-folio-oh2fjmawc-pranjal-shuklas-projects.vercel.app',
+    methods: ["POST", "GET"],
+    credentials: true,
 }));
 
 const port = 5100;
@@ -36,6 +36,7 @@ const formDataSchema = new mongoose.Schema({
 const FormData = mongoose.model('Portfolio', formDataSchema);
 
 app.use(bodyParser.json());
+app.use(cors());
 app.get('/',(req,res)=>{
     res.send("Api running")
 })
