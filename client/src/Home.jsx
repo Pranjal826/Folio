@@ -12,7 +12,7 @@ const Home=()=>{
 </div>
 
 <div className="image">
-  <img src="WhatsApp Image 2023-08-29 at 2.41.37 PM.jpeg" alt="" />
+  <img src="image.png" alt="" />
 </div>
 
 </section>
