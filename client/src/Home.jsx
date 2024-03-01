@@ -12,7 +12,7 @@ const Home=()=>{
 </div>
 
 <div className="image">
-  <img src="image.png" alt="" />
+  <img src="myimg1.jpeg" alt="" />
 </div>
 
 </section>

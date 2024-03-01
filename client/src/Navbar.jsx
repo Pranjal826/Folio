@@ -22,7 +22,11 @@ const Navbar = () => {
         <nav className={`navbar ${isActive ? 'active' : ''}`}>
           <a href="#home" className='a'>home</a>
           <a href="#about" className='a'>about</a>
+          <a href="#training" className='a'>training</a>
+
           <a href="#experience" className='a'>experience</a>
+          <a href="#projects" className='a'>projects</a>
+
           <a href="#contact" className='a'>contact</a>
         </nav>
 

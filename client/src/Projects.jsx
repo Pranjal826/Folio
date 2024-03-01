@@ -3,12 +3,32 @@ const Projects=()=>{
     return(
         <>
         
-      <section className="experience" id="experience">
+      <section className="experience" id="projects">
 
 <h1 className="heading"> <span>  Projects </span></h1>
 
 <div className="box-container">
+<div className="box">
+    <div className="content exp-tra">
+      <span>2024</span>
+      <h3>Internshala Clone</h3>
+      <p>
+        <Link to='https://github.com/Pranjal826/Internshala-Clone'>GitHub Repository</Link>
+        <Link to='https://www.linkedin.com/posts/pranjal-shukla-897967221_internshalaclone-soloachievement-codingjourney-activity-7168981354494328832-8wLl?utm_source=share&utm_medium=member_desktop'>See Video</Link>
 
+      </p>
+    </div>
+  </div>
+  <div className="box">
+    <div className="content exp-tra">
+      <span>2024</span>
+      <h3>NextJs Website</h3>
+      <p>
+        <Link to='https://next-app-bay.vercel.app/'>Link</Link>
+        <Link to='https://github.com/Pranjal826/next-app'>Github Repository</Link>
+      </p>
+    </div>
+  </div>
   <div className="box">
     <div className="content exp-tra">
       <span>2023</span>
@@ -27,7 +47,7 @@ const Projects=()=>{
       <h3>MakeUp Eccommerce Site</h3>
       <p>
         <Link to='https://github.com/Pranjal826/MAKEUP'>GitHub Repository</Link>
-        <Link to='https://www.linkedin.com/posts/pranjal-shukla-897967221_paymentgateway-razorpay-like-activity-7143339085149986816-Lf7S?utm_source=share&utm_medium=member_desktop'>See Video</Link>
+        <Link to='https://glamaura.vercel.app'>Link </Link>
       </p>
     </div>
 
@@ -50,7 +70,7 @@ const Projects=()=>{
   <div className="box">
     <div className="content exp-tra">
       <span>2023</span>
-      <h3>Web Dev Showcases</h3>
+      <h3>Frontend Projects</h3>
       <p>
         <Link to='https://github.com/Pranjal826/Links-to-landing-pages'>Click here to show</Link>
       </p>

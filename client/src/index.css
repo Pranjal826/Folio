@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root{
     --main-color:#e38528;
 }
@@ -92,17 +94,17 @@ h3 {
     padding-bottom: 1rem;
     color:#f8eeee;
     text-transform: uppercase;
-    font-family: 'Caveat', cursive;
+    font-family: 'Protest Revolution', cursive;
 
 }
 #toggleText{
-    font-family: 'Caveat', cursive;
+    font-family: 'Protest Revolution', cursive;
 
 }
 .heading span{
     color:var(--main-color);
     text-transform: uppercase;
-    font-family: 'Caveat', cursive;
+    font-family: 'Protest Revolution', cursive;
 
 }
 
@@ -663,7 +665,7 @@ header .follow a:hover{
     font-size: 5rem;
     color: #e38528;
     text-align: center;
-    font-family:'Caveat', Arial ;
+    font-family:'Protest Revolution', Arial ;
   }
   
   .form-group {

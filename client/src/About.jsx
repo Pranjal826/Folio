@@ -1,89 +1,126 @@
-const About=()=>{
-    return(
-        <>
-         <section className="about" id="about">
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import AnimatedLink from './AnimatedLink';
+const About = () => {
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
 
-<div className="row-1">
+  const boxVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  };
 
-  <div className="content">
+  return (
+    <motion.section
+      className="about py-12 text-white"
+      id="about"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      data-scroll
+    >
+      <div className="container mx-auto">
+        <motion.div
+          className="flex flex-col-reverse md:flex-row items-center justify-between"
+          variants={containerVariants}
+        >
+          <motion.div
+            className="content md:w-1/2 mb-8 md:mb-0"
+            variants={boxVariants}
+          >
+            <p className="text-gray-100 text-[18px]">
+              I am a dedicated scholar enrolled at the esteemed School of
+              Information Technology, RGPV, where I am presently engaged in
+              the pursuit of a Bachelor's degree in the intersection of
+              Computer Science and Business Systems.
+            </p>
+            <div className="box-container mt-6 flex flex-col md:flex-col">
+              <div className="box mr-6">
+                <p className="text-gray-200">
+                  <span className="font-semibold text-[18px]">Age: 21</span>
+                </p>
+              </div>
+              <div className="box text-[18px]">
+                <p className="text-gray-200">
+                  <span className="font-semibold">Phone:</span> 9302931857,
+                  7509008890
+                </p>
+                <p className="text-gray-200">
+                  <span className="font-semibold">Email:</span>{' '}
+                  pranjalshukla245@gmail.com
+                </p>
+              </div>
+            </div>
+     <AnimatedLink/>
+            
+            
+          </motion.div>
+        </motion.div>
 
-    <p> I am a dedicated scholar enrolled at the esteemed School of Information Technology, RGPV, where I am presently engaged in the pursuit of a Bachelor's degree in the intersection of Computer Science and Business Systems.</p>
-    <div className="box-container">
-      <div className="box">
-        <p> <span> age : </span> 21 </p>
-        <p> <span> gender : </span> male </p>
-        <p> <span> language : </span> hindi, english </p>
+        <motion.h1
+          className="heading text-4xl font-bold mt-12"
+          variants={boxVariants}
+        >
+          <span className="text-yellow-300">My</span> Skills
+        </motion.h1>
 
+        <div className="row-2 mt-8">
+          <motion.div
+            className="flex flex-col gap-4 justify-center items-center w-full md:flex-row"
+            variants={boxVariants}
+          >
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-8">
+              <motion.div
+                className="bg-gradient-to-b from-blue-400 to-blue-600 p-6 rounded-lg shadow-lg"
+                variants={boxVariants}
+              >
+                <h3 className="text-[15px] font-semibold mb-2">
+                  MERN Stack Development
+                </h3>
+              </motion.div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-8">
+              <motion.div
+                className="bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-lg shadow-lg"
+                variants={boxVariants}
+              >
+                <h3 className="text-[15px] font-semibold mb-2">SQL</h3>
+              </motion.div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-8">
+              <motion.div
+                className="bg-gradient-to-b from-pink-400 to-pink-600 p-6 rounded-lg shadow-lg"
+                variants={boxVariants}
+              >
+                <h3 className="text-[15px] font-semibold mb-2">C/C++</h3>
+              </motion.div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-8">
+              <motion.div
+                className="bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-lg shadow-lg"
+                variants={boxVariants}
+              >
+                <h3 className="text-[15px] font-semibold mb-2">Python</h3>
+              </motion.div>
+            </div>
+            <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-8">
+              <motion.div
+                className="bg-gradient-to-b from-yellow-400 to-yellow-600 p-6 rounded-lg shadow-lg"
+                variants={boxVariants}
+              >
+                <h3 className="text-[15px] font-semibold mb-2">
+                  Data Analytics
+                </h3>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
-      <div className="box">
+    </motion.section>
+  );
+};
 
-        <p> <span> phone : </span> 9302931857, 7509008890 </p>
-        <p> <span> email : </span> pranjalshukla245@gmail.com </p>
-        <p> <span> country : </span> india </p>
-      </div>
-    </div>
-
-    <a href="Pranjal_Shukla.pdf" target="_blank" className="btn">Resume</a>
-  </div>
-
-</div>
-
-<h1 className="heading"> <span> my </span> skills </h1>
-
-<div className="row-2">
-
-  <div className="skills">
-    <div className="progress">
-      <h3> MERN Stack development <span> 85% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-    <div className="progress">
-      <h3> SQL <span> 80% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-    <div className="progress">
-      <h3> Good communication <span> 70% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-    <div className="progress">
-      <h3> C/c++ <span> 65% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-    <div className="progress">
-      <h3>Problem solving <span> 60% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-    <div className="progress">
-      <h3>Python<span> 70% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-    <div className="progress">
-      <h3>Data Analytics<span> 70% </span> </h3>
-      <div className="bar"> <span></span> </div>
-    </div>
-  </div>
-
-  <div className="box-container">
-
-    <div className="box">
-      <h3> 6 </h3>
-      <p>months of training in MERN from Sheryians Coding School</p>
-    </div>
-
-    <div className="box">
-      <h3> 5 </h3>
-      <p>months of Training in Data Science with Python from Sheryians Coding School</p>
-    </div>
-
-
-
-  </div>
-
-</div>
-
-</section>
-        </>
-    )
-}
 export default About;

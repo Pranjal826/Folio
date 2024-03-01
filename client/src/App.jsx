@@ -8,16 +8,18 @@ import About from './About';
 import Experience from './Exp1';
 import ContactForm from './Contact';
 import Projects from './Projects';
+import Training from './Training';
+import NotFound from './Notfound';
 const App = () => {
   const [isActive, setIsActive] = useState(false);
 
   const toggleMenu = () => {
     setIsActive(!isActive);
   };
-  
+
   useEffect(() => {
-   
-    
+
+
     let cursor1 = document.querySelector('.cursor-1');
     let cursor2 = document.querySelector('.cursor-2');
 
@@ -41,7 +43,7 @@ const App = () => {
     });
 
     const toggleTextElement = document.getElementById("toggleText");
-    const texts = ["Pranjal Shukla", "Full stack developer", "UI/UX designer","Data Analyst"];
+    const texts = ["Pranjal Shukla", "Full stack developer", "UI/UX designer", "Data Analyst"];
     let textIndex = 0;
     let charIndex = 0;
 
@@ -100,11 +102,11 @@ const App = () => {
     });
     gsap.registerPlugin(ScrollTrigger);
 
-   
+
 
     const iconDivs = document.querySelectorAll('.icons');
 
-   
+
     gsap.utils.toArray('.exp-tra').forEach(box => {
       box.addEventListener('mouseenter', () => {
         gsap.to(box, { scale: 1.05, duration: 0.3 });
@@ -159,32 +161,30 @@ const App = () => {
     });
     gsap.utils.toArray('.box').forEach(box => {
       gsap.from(box, {
-          y: 50,
-          opacity: 0,
-          scrollTrigger: {
-              trigger: box,
-              start: 'top 88%', 
-              toggleActions: 'play none none reverse',
-  
-          },
+        y: 50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: box,
+          start: 'top 88%',
+          toggleActions: 'play none none reverse',
+
+        },
       });
-  });
+    });
   }, []);
   return (
     <>
-     <Navbar/>
-     <Home/>
-     <About/>
-<Experience/>
+      <Navbar />
+      <Home />
+      <About />
+      <Training />
+      <Experience />
+      <Projects />
+      <ContactForm />
 
-<Projects/>
-
-    
-      
-      <ContactForm/>
       <footer className="footer"> created by <span> mr. pranjal shukla</span> | all rights reserved! </footer>
 
-
+     
     </>
   )
 }
