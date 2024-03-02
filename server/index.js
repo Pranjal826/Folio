@@ -9,10 +9,8 @@ emitter.setMaxListeners(15);
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://pranjalshukla245:RgiDeemJ5JkE7DGt@cluster0.vtjn0jv.mongodb.net/Myfolio?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(()=>{
+mongoose.connect('mongodb+srv://pranjalshukla245:cdImBMeclOAfbR6X@cluster0.vtjn0jv.mongodb.net/Myportfolio?retryWrites=true&w=majority'
+).then(()=>{
     console.log("connected to mongodb");
 }).catch((err)=>{
     console.log("error connecting to mongodb",err);
